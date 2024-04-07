@@ -13,8 +13,7 @@
         <main class="container">
             <nav class="custom-navigation">
                 <div class="menu">
-                    <button class="custom-button">Login</button>
-                    <button class="custom-button">SingUp</button>
+                    <a href="{% url 'users:signup' %}" class="button-link">Sign Up</a>
                 </div>
             </nav>
             {% for quote in quotes %}

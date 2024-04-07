@@ -3,7 +3,7 @@
 <div>
     <h2>Sing Up</h2>
 </div>
-    <form method="POST" action="{% url 'users:singup' %}" >
+    <form method="POST" action="{% url 'users:signup' %}" >
         {% csrf_token %}
         <div>
             <label class="label-desc-custom-class">Username: {{ form.username}}</label>
@@ -18,7 +18,7 @@
             <span>{{form.errors.password2}}</span>
         </div>
         <div class="grid">
-            <button type="submit" class="custom-button">SingUp</button>
+            <button type="submit" class="custom-button">SignUp</button>
             <button type="reset" class="custom-button">Reset</button>
         </div>
     </form>
