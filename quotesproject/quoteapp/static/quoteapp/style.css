@@ -215,3 +215,53 @@ nav-item {
     border-radius: 10px;
     margin: 5px;
 }
+
+.author-detail {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #181818;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+
+}
+
+.author-detail .author {
+    font-size: 30px;    
+
+}
+
+.born_date {
+    background-color: #222222;
+    font-size: 20px;
+    width: auto;
+    height: auto;
+    padding: 5px 30px 5px 30px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.born_location {
+    background-color: #222222;
+    font-size: 20px;
+    width: auto;
+    height: auto;
+    padding: 5px 30px 5px 30px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.description-class{
+    display: flex;
+    flex-direction: column;
+}
+
+.description {
+    background-color: #222222;
+    font-size: 20px;
+    width: auto;
+    height: auto;
+    padding: 5px 30px 5px 30px;
+    border-radius: 10px;
+    margin: 5px;
+}

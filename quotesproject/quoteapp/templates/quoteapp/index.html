@@ -6,6 +6,7 @@
         <title>Main Page</title>
         {% load static %}
         <link rel="stylesheet" href="{% static 'quoteapp/style.css' %}">
+        <p>Quotes</p>
     </head>
     <body>
         
@@ -23,7 +24,9 @@
                 </div>
                 <div class="author-block">
                     <div class="author">
-                         By: {{quote.author}}
+                        <a href="{% url 'quoteapp:author_detail' quote.author.id %}" role="button">
+                            By: {{ quote.author }}
+                        </a>
                     </div>
                 </div>
                     <div class="tags">

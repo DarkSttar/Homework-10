@@ -1,6 +1,11 @@
-from django.shortcuts import render ,redirect
+from django.shortcuts import render ,redirect, get_object_or_404
 from .forms import QuotesForm,TagForm,AuthorForm
 from .models import Author,Quote,Tag
+
+def author_detail(request,author_id):
+    author = Author.objects.get(pk=author_id)
+    return render(request,'quoteapp/author_detail.html',{'author':author})
+
 def main(request):
     quotes = Quote.objects.all()
     return render(request,'quoteapp/index.html',{'quotes':quotes})

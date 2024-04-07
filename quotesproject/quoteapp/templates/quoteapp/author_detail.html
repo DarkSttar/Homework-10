@@ -1,0 +1,15 @@
+{% extends "quoteapp/base.html" %}
+
+{% block content %}
+<div class="author-detail">
+    <div class="author">Author Name: {{author.name}}</div>
+    <div class="born_date">Born Date: {{author.born_date}}</div>
+    <div class="born_location">Born Location: {{author.born_location}}</div>
+    <div class="description-class">
+        <label>Description:</label>
+        <div class="description">
+            {{author.description}}
+        </div>
+    </div>
+</div>
+{% endblock %}
