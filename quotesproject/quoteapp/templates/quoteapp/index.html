@@ -25,7 +25,11 @@
                     <p>By: {{quote.author}}</p>
                 </div>
                 <div class="tags">
-                    <p>Tags:<small> {{quotes.tags|tags}}</small></p>
+                    {% for tag in quote.tags|tags %}
+                    <div>
+                    {{tag.tag}}
+                    </div>
+                    {% endfor %}
                 </div>        
             </div>    
             {% endfor %}
