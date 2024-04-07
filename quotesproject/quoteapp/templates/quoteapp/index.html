@@ -24,7 +24,7 @@
                 </div>
                 <div class="author-block">
                     <div class="author">
-                        <a href="{% url 'quoteapp:author_detail' quote.author.id %}" role="button">
+                        <a href="{% url 'quoteapp:author_detail' quote.author.id %}" class="button-link">
                             By: {{ quote.author }}
                         </a>
                     </div>
@@ -32,7 +32,7 @@
                     <div class="tags">
                     {% for tag in quote.tags|tags %}
                     <div class="tag">
-                    {{tag.tag}}
+                    <a href="{% url 'quoteapp:quotes_by_tag' tag.id %}" class="button-link">  {{tag.tag}}</a>
                     </div>
                     {% endfor %}
                 </div>        
