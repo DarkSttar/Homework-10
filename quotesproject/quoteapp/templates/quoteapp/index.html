@@ -1,3 +1,4 @@
+{% load extract_tags %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,6 +8,7 @@
         <link rel="stylesheet" href="{% static 'quoteapp/style.css' %}">
     </head>
     <body>
+        
         <main class="container">
             <nav class="custom-navigation">
                 <div class="menu">
@@ -23,11 +25,7 @@
                     <p>By: {{quote.author}}</p>
                 </div>
                 <div class="tags">
-                    {% for tag in quote.tag_set.all %}
-                    <div class="tag">
-                        <label>{{tag.tag}}</label>
-                    </div>
-                    {% endfor %}
+                    <p>Tags:<small> {{quotes.tags|tags}}</small></p>
                 </div>        
             </div>    
             {% endfor %}

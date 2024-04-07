@@ -8,10 +8,10 @@ class QuotesForm(ModelForm):
         widget=Textarea(attrs={'class':'custom-textarea',}))
     
     author = ModelChoiceField(queryset= Author.objects.all(),widget=Select(attrs={'class':'custom-select'}))
-    tags = MultipleChoiceField(choices=Tag.objects.values_list('id','tag'),widget=SelectMultiple(attrs={'class':'custom-selectmultiple'}))
     class Meta:
         model = Quote
-        fields = ['quote','author','tags']
+        fields = ['quote','author']
+        exclude = ['tags']
         
 class TagForm(ModelForm):
     tag = CharField(

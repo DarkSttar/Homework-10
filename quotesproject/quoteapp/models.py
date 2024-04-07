@@ -14,6 +14,6 @@ class Author(models.Model):
 class Quote(models.Model):
     quote = models.CharField(max_length=1000, null=False)
     author = models.ForeignKey(Author,on_delete=models.CASCADE)
-    tag = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField(Tag)
     def __str__(self):
         return self.quote
