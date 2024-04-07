@@ -177,14 +177,32 @@ nav-item {
 }
 
 .author {
+    font-size: 20px;
     width: 1100px;
     height: 70px;
 }
 
 .quote {
+    
+    border: 1px solid green;
+    border-radius: 10px;
+    font-size: 30px;
     width: 1100px;
     height: auto;
     word-wrap: break-word;
+    background-color: #333333;
 }
 
 
+.tags {
+    display: flex;
+    flex-direction: row;
+}
+
+.tag {
+    background-color: #222222;
+    font-size: 15px;
+    padding: 5px 30px 5px 30px;
+    border-radius: 10px;
+    margin: 5px;
+}
