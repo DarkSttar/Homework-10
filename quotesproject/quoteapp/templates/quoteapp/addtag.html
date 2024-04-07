@@ -1,0 +1,16 @@
+{% extends 'quoteapp/base.html' %}
+
+{% block content %}
+<form method="POST" action="{% url 'quoteapp:addtag' %}" class="addtag-class"> 
+    {% csrf_token %}
+    <div class="div-custom-class">
+        <label class="label-desc-custom-class">Enter Tag:</label>
+        <label>{{form.tag}}</label>
+        <span>{{form.errors.tag}}</span>
+    </div>
+    <div class="grid">
+        <button type="submit" class="custom-button">Add Tag</button>
+        <button type="reset" class="custom-button">Reset</button>
+    </div>
+</form>
+{% endblock %}

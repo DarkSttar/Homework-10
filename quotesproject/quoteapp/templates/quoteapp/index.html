@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Main Page</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'quoteapp/style.css' %}">
+    </head>
+    <body>
+        <main class="container">
+            <nav class="custom-navigation">
+                <div class="menu">
+                    <button class="custom-button">Login</button>
+                    <button class="custom-button">SingUp</button>
+                </div>
+            </nav>
+            {% for quote in quotes %}
+            <div class="quote-info">
+                <div class="quote">
+                    <label>"{{quote.quote}}"</label>
+                </div>
+                <div class="author">
+                    <p>By: {{quote.author}}</p>
+                </div>
+                <div class="tags">
+                    {% for tag in quote.tag_set.all %}
+                    <div class="tag">
+                        <label>{{tag.tag}}</label>
+                    </div>
+                    {% endfor %}
+                </div>        
+            </div>    
+            {% endfor %}
+            
+        </main>
+    </body>
+</html>

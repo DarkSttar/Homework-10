@@ -1,0 +1,31 @@
+{% extends "quoteapp/base.html" %}
+
+{% block content %}
+<form method="POST" action="{% url 'quoteapp:addauthor' %}" class="addauthor-class">
+    {% csrf_token %}    
+    <div class="div-custom-class">
+        <label class="label-desc-custom-class">Enter Author Name:</label>
+        <label>{{form.name}}</label>
+        <span>{{form.errors.name}}</span>
+    </div>
+    <div class="div-custom-class">
+        <label class="label-desc-custom-class">Enter Born Date:</label>
+        <label>{{form.born_date}}</label>
+        <span>{{form.errors.name}}</span>
+    </div>
+    <div class="div-custom-class">  
+        <label class="label-desc-custom-class">Enter Born Location:</label>
+        <label>{{form.born_location}}</label>
+        <span>{{form.errors.born_location}}</span>
+    </div>
+    <div class="div-custom-class">
+        <label class="label-desc-custom-class">Enter Description:</label>
+        <label>{{form.description}}</label>
+        <span>{{form.errors.description}}</span>
+    </div>
+    <div>
+        <button type="submit" class="custom-button">Add Author</button>
+        <button type="reset" class="custom-button">Reset</button>
+    </div>
+</form>
+{% endblock %}
