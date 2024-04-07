@@ -6,18 +6,18 @@ from django.contrib.auth.models import User
 class RegisterForm(UserCreationForm):
     username = forms.CharField(max_length=60,
                                required=True,
-                               widget=forms.TextInput())
+                               widget=forms.TextInput(attrs={"class":"custom-textinput"}))
     password1 = forms.CharField(
         min_length=5,
         max_length=50,
         required=True,
-        widget=forms.PasswordInput()
+        widget=forms.PasswordInput(attrs={"class":"custom-textinput"})
     )
     password2 = forms.CharField(
         min_length=5,
         max_length=50,
         required=True,
-        widget=forms.PasswordInput()
+        widget=forms.PasswordInput(attrs={"class":"custom-textinput"})
     )
 
     class Meta:

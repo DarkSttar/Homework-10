@@ -1,7 +1,7 @@
 {% extends 'quoteapp/base.html' %}
 {% block content %}
 <div>
-    <h2>Sing Up</h2>
+    <h2>Sign Up</h2>
 </div>
     <form method="POST" action="{% url 'users:signup' %}" >
         {% csrf_token %}
