@@ -21,10 +21,12 @@
                 <div class="quote">
                     <label>"{{quote.quote}}"</label>
                 </div>
-                <div class="author">
-                    <p>By: {{quote.author}}</p>
+                <div class="author-block">
+                    <div class="author">
+                         By: {{quote.author}}
+                    </div>
                 </div>
-                <div class="tags">
+                    <div class="tags">
                     {% for tag in quote.tags|tags %}
                     <div class="tag">
                     {{tag.tag}}
