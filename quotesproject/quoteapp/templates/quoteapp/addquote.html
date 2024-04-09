@@ -1,29 +1,37 @@
-{% extends "quoteapp/base.html" %}
+{% extends "quoteapp/base1.html" %}
 
 {% block content %}
 <form method="POST" action="{% url 'quoteapp:addquote' %}" class="addquote-class">
     {% csrf_token %}
-    <div class="div-custom-class">
-        <label class="label-desc-custom-class">Enter Quote</label>
-        <label>{{form.quote}}</label>
-        <span>{{form.errors.quote}}</span>
+    
+    <div class="add-quote-form-controll">
+        <div><span class="form-name-text">Add Quote</span></div>
+        <ul class="quote-content-col">
+            <li>{{form.quote}}</li>
+        </ul>
+        <br>
+        <ul class="author-content-row">
+            <li>Select Author</li>
+            <li>{{form.author}}</li>
+            <li><a href="{% url 'quoteapp:addauthor' %}" class="button-nav-link">Add author</a></li>
+        </ul>
+        <br>
+        <ul class="tag-content-row">
+            <li>Select Tags</li>
+            <li><select name="tags" multiple="multiple" class="custom-selectmultiple" required>
+                {% for tag in tags %}
+                <option value="{{tag.tag}}">{{tag.tag}}</option>
+                {% endfor %}
+            </select></li>
+            <li><a href="{% url 'quoteapp:addtag' %}" class="button-nav-link">Add Tag</a></li>
+        </ul>   
+        <br>
+        <div class="login-form-button-row">
+            <button type="submit" class="custom-button">Add quote</button>
+            <button type='reset' class="custom-button">Reset</button>
+        </div>
     </div>
-    <div class="div-custom-class">
-        <label class="label-desc-custom-class">Enter author:</label>
-        <label>{{form.author}}</label>
-        <span>{{form.errors.author}}</span>
-    </div>
-    <div class="div-custom-class">
-        <select name="tags" multiple="multiple" required>
-            {% for tag in tags %}
-            <option value="{{tag.tag}}">{{tag.tag}}</option>
-            {% endfor %}
-        </select>
-    </div>
-    <div class="grid">
-        <button type="submit" class="custom-button">Submit</button>
-        <button type='reset' class="custom-button">Reset</button>
-    </div>
+        
 
 </form>
 

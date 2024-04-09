@@ -1,31 +1,41 @@
-{% extends "quoteapp/base.html" %}
+{% extends "quoteapp/base1.html" %}
 
 {% block content %}
-<form method="POST" action="{% url 'quoteapp:addauthor' %}" class="addauthor-class">
+<form method="POST" action="{% url 'quoteapp:addauthor' %}" class="add-author-form-controll" >
     {% csrf_token %}    
-    <div class="div-custom-class">
-        <label class="label-desc-custom-class">Enter Author Name:</label>
-        <label>{{form.name}}</label>
-        <span>{{form.errors.name}}</span>
-    </div>
-    <div class="div-custom-class">
-        <label class="label-desc-custom-class">Enter Born Date:</label>
-        <label>{{form.born_date}}</label>
-        <span>{{form.errors.name}}</span>
-    </div>
-    <div class="div-custom-class">  
-        <label class="label-desc-custom-class">Enter Born Location:</label>
-        <label>{{form.born_location}}</label>
-        <span>{{form.errors.born_location}}</span>
-    </div>
-    <div class="div-custom-class">
-        <label class="label-desc-custom-class">Enter Description:</label>
-        <label>{{form.description}}</label>
-        <span>{{form.errors.description}}</span>
-    </div>
-    <div>
-        <button type="submit" class="custom-button">Add Author</button>
-        <button type="reset" class="custom-button">Reset</button>
-    </div>
+    <div class="add-author-content-col">
+        <div><span class="form-name-text">Add Author</span></div>
+        <br>
+        <div class="add-author-content-col">
+            <ul class="add-author-content-row">
+                <li>Enter author name:</li>
+                <li>{{form.name}}</li>
+            </ul>
+            <span>{{form.errors.name}}</span>
+            <br>
+            <ul class="born-date-content-row">
+                <li>Enter born date:</li>
+                <li>{{form.born_date}}</li>
+                
+            </ul>
+            <span>{{form.errors.born_date}}</span>
+            <br>
+            <ul class="born-location-content-row">
+                <li>Enter born location:</li>
+                <li>{{form.born_location}}</li>
+            </ul>
+            <span>{{form.errors.born_location}}</span>
+            <br>
+            <ul class="description-content-row">
+                <li>Description:</li>
+                <li>{{form.description}}</li>
+            </ul>
+            <span>{{form.errors.description}}</span>
+        </div>
+        
+        <div>
+            <button type="submit" class="custom-button">Add Author</button>
+            <button type="reset" class="custom-button">Reset</button>
+        </div>
 </form>
 {% endblock %}

@@ -1,14 +1,18 @@
 {% extends 'quoteapp/base.html' %}
 
 {% block content %}
-<form method="POST" action="{% url 'quoteapp:addtag' %}" class="addtag-class"> 
+<form method="POST" action="{% url 'quoteapp:addtag' %}" class="add-tag-form-controll"> 
     {% csrf_token %}
-    <div class="div-custom-class">
-        <label class="label-desc-custom-class">Enter Tag:</label>
-        <label>{{form.tag}}</label>
+    <div class="add-tag-content-col">
+        <div><span class="form-name-text">Add Author</span></div>
+        <br>
+        <ul class="add-tag-content-row">
+            <li>Enter Tag:</li>
+            <li>{{form.tag}}</li>
+        </ul>
         <span>{{form.errors.tag}}</span>
     </div>
-    <div class="grid">
+    <div class="login-form-button-row">
         <button type="submit" class="custom-button">Add Tag</button>
         <button type="reset" class="custom-button">Reset</button>
     </div>

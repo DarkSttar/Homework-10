@@ -13,6 +13,7 @@
 
     <form method="POST" action="{% url 'users:login' %}" class="login-form-controll">
         {% csrf_token %}
+        <div><span class="form-name-text">Login</span></div>
         <div class="login-form-content-col">
             <ul class="login-row">
                 <li>Username:</li>

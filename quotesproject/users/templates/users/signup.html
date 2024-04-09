@@ -1,24 +1,30 @@
-{% extends 'quoteapp/base.html' %}
+{% extends 'quoteapp/base1.html' %}
 {% block content %}
 <div>
-    <h2>Sign Up</h2>
+    
 </div>
-    <form method="POST" action="{% url 'users:signup' %}" >
+    <form method="POST" action="{% url 'users:signup' %}" class="register-form-controll" >
         {% csrf_token %}
-        <div>
-            <label class="label-desc-custom-class">Username: {{ form.username}}</label>
-        </div>
-        <br>
-        <div>
-            <label class="label-desc-custom-class">Password: {{form.password1}}</label>
+        <div class="form-name-text"><span>Register</span></div>
+        <div class="login-form-content-col">
+            <ul class="login-row">
+                <li>Username:</li>
+                <li>{{form.username}}</li>
+            </ul>
             <span>{{form.errors.password1}}</span>
-        </div>
-        <div>
-            <label class="label-desc-custom-class">Password confirmation: {{form.password2}}</label>
+            <ul class="password-row"> 
+                <li>Password:</li>
+                <li>{{form.password1}}</li>
+            </ul>
+            <span>{{form.errors.password1}}</span>
+            <ul class="password-row">
+                <li>Password confirmation:</li>
+                <li>{{form.password2}}</li>
+            </ul>
             <span>{{form.errors.password2}}</span>
         </div>
-        <div class="grid">
-            <button type="submit" class="custom-button">SignUp</button>
+        <div class="login-form-button-row">
+            <button type="submit" class="custom-button">Sign Up</button>
             <button type="reset" class="custom-button">Reset</button>
         </div>
     </form>
