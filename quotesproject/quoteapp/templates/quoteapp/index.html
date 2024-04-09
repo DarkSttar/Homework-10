@@ -1,21 +1,8 @@
+{% extends "quoteapp/base.html" %}
 {% load extract_tags %}
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Main Page</title>
-        {% load static %}
-        <link rel="stylesheet" href="{% static 'quoteapp/style.css' %}">
-        <p>Quotes</p>
-    </head>
-    <body>
-        
-        <main class="container">
-            <nav class="custom-navigation">
-                <div class="menu">
-                    <a href="{% url 'users:signup' %}" class="button-link">Sign Up</a>
-                </div>
-            </nav>
+
+{% block content%}
+
             {% for quote in quotes %}
             <div class="quote-info">
                 <div class="quote">
@@ -33,11 +20,10 @@
                     <div class="tag">
                     <a href="{% url 'quoteapp:quotes_by_tag' tag.id %}" class="button-link">  {{tag.tag}}</a>
                     </div>
+                    
                     {% endfor %}
                 </div>        
             </div>    
             {% endfor %}
             
-        </main>
-    </body>
-</html>
+   {% endblock %}

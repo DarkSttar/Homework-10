@@ -2,23 +2,40 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Main Page</title>
+        <title>{% block title %}Base Page{% endblock %}</title>
         {% load static %}
         <link rel="stylesheet" href="{% static 'quoteapp/style.css' %}">
         
     </head>
     <body>
-        <main class="container">
-            <nav class="custom-navigation">
-                <div class="menu">
-                    <a href="{% url 'quoteapp:main' %}" class="button-link">Main</a>
-                </div>
+        <div class='col-b'>
+            <nav class="navigation">
+                <ul class="nav-list">
+                    <li class="nav-link-logo">Quotes Site.com</li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item"><a href="{% url 'quoteapp:addquote' %}" class="button-link">Add quote</a></li>
+                </ul>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="{% url 'quoteapp:main' %}" class="button-link">Profile</a></li>
+                    <li class="nav-item"><a href="{% url 'users:logout' %}" class="button-link">Logout</a></li>
+                    {% else %}
+                </ul>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="{% url 'users:login' %}" class="button-link">Login</a></li>
+                    <li class="nav-item"><a href="{% url 'users:signup' %}" class="button-link">Sign Up</a></li>
+                    {%endif%}
+                </ul>
+
+                
+                
             </nav>
+            
             <div class="container">
             {% block content %} 
                 
             {% endblock %}
             </div>
-        </main>
+        
+        </div>
     </body>
 </html>
