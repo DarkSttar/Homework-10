@@ -83,12 +83,18 @@ a.button-nav-link:hover {
     flex-direction: row;
 }
 
+.content-col {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
 
 .content-col-1 {
     width: 70%;
     padding-left: 10%;
     padding-right: 10%;
 }
+
 .content-col-2 {
     width: 30%;
 }
@@ -146,6 +152,102 @@ a.button-link {
     transition: background-color 0.1s;
 }
 
+.custom-button {
+    align-content: center;
+    display: inline-block;
+    margin-inline: 4px;
+    padding: 17px 40px ;
+    background-color: #222222;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.custom-button:hover {
+    background-color: #6d83b4;/* #1447b3 */
+}
+
 a.button-link:hover {
     background-color: #6d83b4;/* #1447b3 */
+}
+
+
+.custom-textinput:-webkit-autofill {
+    resize: none;
+    border: 1px solid black;   
+    font-size: 16px;
+    background-color: #444444;
+    color:#e6e6e6;
+    width: 400px;
+    height: 40px;
+    font-family: cursive;
+    font-size: 30px;
+    transition: background-color 0.2s;
+    
+}
+
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus
+ {
+  border: 1px solid black;
+  -webkit-text-fill-color: #e6e6e6;
+  -webkit-box-shadow: 0 0 0px 1000px #444444 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.login-form-controll {
+    display: flex;
+    flex-direction: column; 
+    width: 557px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #534a44;
+    
+       
+}
+
+.login-row  {
+    display: flex;
+    flex-direction: row;
+    list-style-type:none;
+    padding-inline-start: 0px;
+}
+
+.login-row li {
+    width: 150px;
+    align-content: center;
+    font-size: 30px;
+    
+}
+.password-row {
+    display: flex;
+    flex-direction: row;
+    padding-inline-start: 0px;
+    list-style-type:none;
+}
+
+.password-row li {
+    width: 150px;
+    align-content: center;
+    font-size: 30px;
+    
+}
+
+.login-form-button-row {
+    display: flex;
+    flex-direction: row-reverse;
 }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Base Page{% endblock %}</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'quoteapp/style.css' %}">
+        
+    </head>
+    <body>
+        <div class='col-b'>
+            <nav class="navigation">
+                <ul class="nav-list">
+                    <li><a href="{% url 'quoteapp:main' %}" class="nav-link-logo"><span class="logo-blue">QuotesSite.</span><span class="logo-black">Go</span><span class="logo-orange">IT</span></a></li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item"><a href="{% url 'quoteapp:addquote' %}" class="button-nav-link">Add quote</a></li>
+                </ul>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="{% url 'quoteapp:main' %}" class="button-nav-link">Profile</a></li>
+                    <li class="nav-item"><a href="{% url 'users:logout' %}" class="button-nav-link">Logout</a></li>
+                    {% else %}
+                </ul>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="{% url 'users:login' %}" class="button-nav-link">Login</a></li>
+                    <li class="nav-item"><a href="{% url 'users:signup' %}" class="button-nav-link">Sign Up</a></li>
+                    {%endif%}
+                </ul> 
+            </nav>
+            <div class="content-row">
+                <div class="content-col">
+                {% block content %} 
+                
+                {% endblock %}
+                </div>
+            </div>
+        
+        </div>
+    </body>
+</html>

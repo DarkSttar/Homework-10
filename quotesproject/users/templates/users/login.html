@@ -1,4 +1,4 @@
-{% extends 'quoteapp/base.html' %}
+{% extends 'quoteapp/base1.html' %}
 
 
 {% block content %}
@@ -11,20 +11,20 @@
     </div>
     {% endif %}
 
-    <form method="POST" action="{% url 'users:login' %}">
+    <form method="POST" action="{% url 'users:login' %}" class="login-form-controll">
         {% csrf_token %}
-        <div>
-            <label>Username:
-                {{form.username}}
-            </label>
+        <div class="login-form-content-col">
+            <ul class="login-row">
+                <li>Username:</li>
+                <li>{{form.username}}</li>
+            </ul>
+            <ul class="password-row">
+                <li>Password:</li>
+                <li>{{form.password}}</li>
+            </ul>
         </div>
-        <div>
-            <label>Password:
-                {{form.password}}
-            </label>
-        </div>
-        <div class="grid">
-            <button type="Submit" class="custom-button">Submit</button>
+        <div class="login-form-button-row">
+            <button type="Submit" class="custom-button">Login</button>
             <button type="reset" class="custom-button">Reset</button>
         </div>
     </form>
