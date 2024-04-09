@@ -27,18 +27,39 @@ body {
     
 }
 .nav-link-logo {
+    align-content: center;
+    display: inline-block;
+    margin-inline: 10px;
+    padding: 10px 40px;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: color 0.2s; 
     height: 80;
     align-content: center;
     font-size: 30px;
 }
 
+
+
+a.nav-link-logo:hover {
+    color: #6d83b4;/* #1447b3 */
+}
+
+a.nav-link-logo:hover .logo-black {
+    color:black;
+}
+a.nav-link-logo:hover .logo-orange {
+    color:orangered;
+}
 .nav-item {
     display:  flex;
     flex-direction: row;
-    
 }
 
-a.button-link {
+a.button-nav-link {
     align-content: center;
     display: inline-block;
     margin-inline: 10px;
@@ -52,8 +73,8 @@ a.button-link {
     transition: background-color 0.1s;
 }
 
-a.button-link:hover {
-    background-color: #1447b3;
+a.button-nav-link:hover {
+    background-color: #6d83b4;/* #1447b3 */
 }
 
 
@@ -65,8 +86,66 @@ a.button-link:hover {
 
 .content-col-1 {
     width: 70%;
-    
+    padding-left: 10%;
+    padding-right: 10%;
 }
 .content-col-2 {
     width: 30%;
+}
+
+.quote-content-block-col {
+    display: flex;
+    flex-direction: column;
+    width: 0 auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #534a44;
+}
+
+.quote-content {
+    font-size: 25px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: oblique;
+    font-weight: 20;
+    margin-bottom: 1px;
+    
+}
+
+.author-content {
+    margin-bottom: 1px;
+}
+
+.tags-content {
+    padding: 0px;
+}
+
+.tag-list {
+    display: flex;
+    flex-direction: row;
+    padding-inline-start: 0;
+    margin-block-start: 5px;
+    margin-block-end: 5px;
+    list-style-type: none;
+    align-items: center;
+    padding: 0;
+}
+
+a.button-link {
+    align-content: center;
+    display: inline-block;
+    margin-inline: 4px;
+    padding: 7px 4px ;
+    background-color: #222222;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+a.button-link:hover {
+    background-color: #6d83b4;/* #1447b3 */
 }

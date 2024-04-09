@@ -4,14 +4,40 @@
 {% block content%}
 
             {% for quote in quotes %}
-            <div class="quote-info">
+            <div class="quote-content-block-col">
+                <div class="quote-content">
+                    <label>"{{quote.quote}}"</label>
+                </div>             
+                <div class="author-content">
+                    Author:<a href="{% url 'quoteapp:author_detail' quote.author.id %}" class="button-link">
+                         {{ quote.author }}
+                    </a>
+                </div>
+                    <div class="tags-content">
+                        <ul class="tag-list">
+                            <li>Tags:</li>
+                            {% for tag in quote.tags|tags %}
+                            <li class="tag-item">
+                                <a href="{% url 'quoteapp:quotes_by_tag' tag.id %}" class="button-link">  {{tag.tag}}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    
+                </div>        
+            </div>    
+            {% endfor %}
+            
+   {% endblock %}
+   {% block rcontent%}
+   {% for quote in quotes %}
+            <div class="quote-content-block-col">
                 <div class="quote">
                     <label>"{{quote.quote}}"</label>
                 </div>
                 <div class="author-block">
                     <div class="author">
                         <a href="{% url 'quoteapp:author_detail' quote.author.id %}" class="button-link">
-                            By: {{ quote.author }}
+                             {{ quote.author }}
                         </a>
                     </div>
                 </div>
@@ -25,5 +51,4 @@
                 </div>        
             </div>    
             {% endfor %}
-            
    {% endblock %}
