@@ -24,16 +24,18 @@
                     <li class="nav-item"><a href="{% url 'users:login' %}" class="button-link">Login</a></li>
                     <li class="nav-item"><a href="{% url 'users:signup' %}" class="button-link">Sign Up</a></li>
                     {%endif%}
-                </ul>
-
-                
-                
+                </ul> 
             </nav>
-            
-            <div class="container">
-            {% block content %} 
+            <div class="contet-row">
+                <div class="content-col-1">
+                {% block content %} 
                 
-            {% endblock %}
+                {% endblock %}
+                </div>
+                <div class="content-col-2">
+                {% block rcontent %}
+                {% endblock%}
+                </div>
             </div>
         
         </div>
