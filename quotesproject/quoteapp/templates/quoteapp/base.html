@@ -16,6 +16,8 @@
                     <li class="nav-item"><a href="{% url 'quoteapp:addquote' %}" class="button-nav-link">Add quote</a></li>
                 </ul>
                 <ul class="nav-list">
+                    <li class="nav-item"><span class="form-name-text" style="color:#6d83b4;">Welcome {{user.username}}!</span:></li>
+                    </li>
                     <li class="nav-item"><a href="{% url 'quoteapp:main' %}" class="button-nav-link">Profile</a></li>
                     <li class="nav-item"><a href="{% url 'users:logout' %}" class="button-nav-link">Logout</a></li>
                     {% else %}

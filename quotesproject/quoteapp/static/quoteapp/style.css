@@ -538,3 +538,29 @@ a.button-link:hover {
     list-style-type: none;
     padding-inline-start: 0px;
 }
+
+
+.top-tags-content {
+    display: flex;
+    flex-direction: column; 
+    width: 300px;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-right: 200px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #534a44;
+    
+}
+
+.top-tags-list {
+    list-style-type: decimal;
+}
+
+.top-tags-list li {
+    margin: 3px;
+    margin-left: 10px;
+    padding-left: 20px;
+}
+

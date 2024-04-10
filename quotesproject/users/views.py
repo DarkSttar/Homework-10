@@ -13,7 +13,7 @@ def signupuser(request):
             form.save()
             return redirect(to='quoteapp:main')
         else:
-            return render(request,'users:signup.html',context={'form':form})
+            return render(request,'users/signup.html',context={'form':form})
 
     return render(request, 'users/signup.html',context= {'form':RegisterForm()})
 
