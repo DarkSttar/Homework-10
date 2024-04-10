@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 django = "*"
 psycopg2 = "*"
+pymongo = {extras = ["srv", "tls"], version = "*"}
 
 [dev-packages]
 

@@ -29,14 +29,21 @@
             <div class="content-row">
                 <div class="content-col-1">
                 {% block content %} 
-                
                 {% endblock %}
+                    <div class="pager-content">
+                        <ul class="pager-row">
+                            <li><a href="{% if quotes.has_previous %} {% url 'quoteapp:root_paginate' quotes.previous_page_number %} {% else %} # {% endif %}" class="{% if not quotes.has_previous %}disable-button-nav-link {% else%} button-nav-link {% endif %}">Previous</a></li>
+                            <li><a href="{% if quotes.has_next %} {% url 'quoteapp:root_paginate' quotes.next_page_number %} {% else %} # {% endif %}" class="{% if not quotes.has_next %}disable-button-nav-link {% else %}button-nav-link{% endif %}">Next</a></li>
+                        
+                        </ul>
+                    </div> 
                 </div>
                 <div class="content-col-2">
                 {% block rcontent %}
                 {% endblock%}
                 </div>
             </div>
+            
         
         </div>
     </body>

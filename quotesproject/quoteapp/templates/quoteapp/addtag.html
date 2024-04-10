@@ -1,10 +1,10 @@
-{% extends 'quoteapp/base.html' %}
+{% extends 'quoteapp/base1.html' %}
 
 {% block content %}
 <form method="POST" action="{% url 'quoteapp:addtag' %}" class="add-tag-form-controll"> 
     {% csrf_token %}
     <div class="add-tag-content-col">
-        <div><span class="form-name-text">Add Author</span></div>
+        <div><span class="form-name-text">Add Tag</span></div>
         <br>
         <ul class="add-tag-content-row">
             <li>Enter Tag:</li>

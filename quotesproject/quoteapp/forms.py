@@ -32,7 +32,7 @@ class AuthorForm(ModelForm):
         required=True,
         widget=TextInput(attrs={'class':'custom-textinput','autocomplete':'off'})
     )
-    born_date = DateField(widget=DateInput(attrs={'type':'date','class':'custom-date-input'}))
+    born_date = CharField(widget=TextInput(attrs={'type':'date','class':'custom-textinput','authocomplete':'off'}))
 
     born_location = CharField(
         min_length=5,

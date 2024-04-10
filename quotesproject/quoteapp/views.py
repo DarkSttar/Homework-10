@@ -1,6 +1,7 @@
 from django.shortcuts import render ,redirect, get_object_or_404
 from .forms import QuotesForm,TagForm,AuthorForm
 from .models import Author,Quote,Tag
+from django.core.paginator import Paginator
 
 def quotes_by_tag(request,tag_id):
     tag = get_object_or_404(Tag,pk=tag_id)
@@ -13,9 +14,18 @@ def author_detail(request,author_id):
     author = Author.objects.get(pk=author_id)
     return render(request,'quoteapp/author_detail.html',{'author':author})
 
-def main(request):
+def main(request, page=1):
+    top_tags = {}
     quotes = Quote.objects.all()
-    return render(request,'quoteapp/index.html',{'quotes':quotes})
+        
+
+    per_page = 10
+    paginator = Paginator(list(quotes),per_page=per_page)
+    quotes_on_page = paginator.page(page)
+    
+    
+
+    return render(request,'quoteapp/index.html',{'quotes':quotes_on_page})
 
 
 

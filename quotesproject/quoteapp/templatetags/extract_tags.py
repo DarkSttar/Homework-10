@@ -7,3 +7,5 @@ register = template.Library()
 def tags(quote_tags):
     return quote_tags.all()
 
+
+
